@@ -1,0 +1,96 @@
+1번
+
+#include <stdio.h>
+
+int plus(int a, int b)
+{
+	int plus;
+	plus = a + b;
+	return(plus);
+}
+int minus(int a, int b)
+{
+	int mi;
+	mi = a - b;
+	return(mi);
+}
+int multiply(int a, int b)
+{
+	int mul;
+	mul = a * b;
+	return(mul);
+}
+float divide(float a, float b)
+{
+	float div;
+	div = a / b;
+	return(div);
+}
+
+int main(void)
+{	
+	int a, b, press;
+
+	while (1)
+	{
+		printf("사칙연산 프로그램\n\n");
+		printf("정수를 입력하시오 : ");
+		scanf_s("%d", &a);
+		printf("정수를 입력하시오 : ");
+		scanf_s("%d", &b);
+		printf("1. 덧셈\n2. 뺄셈\n3. 곱셈\n4. 나눗셈\n계산할 연산의 번호를 입력 : ");
+		scanf_s("%d", &press);
+		switch (press)
+		{
+		case 1:
+			printf("결과 : %d\n\n", plus(a, b));
+			break;
+		case 2:
+			printf("결과 : %d\n\n", minus(a, b));
+			break;
+		case 3:
+			printf("결과 : %d\n\n", multiply(a, b));
+			break;
+		case 4:
+			printf("결과 : %f\n\n", divide(a, b));
+			break;
+		default:
+			break;
+		}
+		
+	}
+}
+
+2번
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+int main(void)
+{
+	srand((unsigned)time(NULL));
+	int a = (rand() % 100) + 1;
+	int b = (rand() % 100) + 1;
+	printf("첫번째 난수 : %d\n", a);
+	printf("두번째 난수 : %d\n", b);
+	if (a > b)
+	{
+		while (b<a-1) 
+		{
+			b++;
+			printf("%d ", b);
+		}
+		printf("\n");
+	}
+	else
+	{
+		while (a<b-1)
+		{
+			++a;
+			printf("%d ", a);
+			
+		}
+		printf("\n");
+	}
+
+}

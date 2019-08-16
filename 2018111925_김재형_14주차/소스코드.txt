@@ -1,0 +1,61 @@
+1번
+
+#include <stdio.h>
+#define size 5
+
+struct grade
+{
+	int eng;
+	int kor;
+	int math;
+};
+
+struct student
+{
+	int stu_num;
+	char name[20];
+	struct grade dob;
+};
+
+
+
+struct student list[size] = 
+{
+	{ 1,"kim",50,40,20 },
+	{ 2,"lee",50,60,90 },
+	{ 3,"kang",100,40,30 },
+	{ 4,"oh",70,40,20 },
+	{ 5,"jang",50,10,20 }
+};
+
+
+int main(void)
+{
+	int a;
+	int i;
+
+	while (1)
+	{
+		printf("1. 전체 학생의 정보 출력\n2. 각 학생들의 성적 평균을 출력");
+		printf("원하는 번호를 선택하시오. (제시한 번호 외 입력시 프로그램 종료) ");
+		scanf_s("%d", &a);
+		switch (a)
+		{
+		case 1:
+			for (int i = 0; i < size; i++)
+			{
+				printf("학번 : %5d 이름 : %5s 영어 : %5d 국어 : %5d 수학 :%5d \n\n", list[i].stu_num, list[i].name, list[i].dob.eng, list[i].dob.kor, list[i].dob.math);
+			}
+			break;
+		case 2:
+			for (int i = 0; i < size; i++)
+			{
+				printf("학번 : %5d 이름 : %5s 성적 평균 : %5d \n\n", list[i].stu_num, list[i].name, (list[i].dob.eng+list[i].dob.kor+list[i].dob.math)/3);
+			}
+			break;
+		default:
+			break;
+		}
+	}
+
+}

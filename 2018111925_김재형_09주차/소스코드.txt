@@ -1,0 +1,68 @@
+1번
+
+#include <stdio.h>
+
+void num(int a)
+{
+	int start;
+	while (a >= 0)
+	{
+		for (start = 10 - a; start >= 0; start--)
+		{
+			printf("%d", start);
+		}
+		a--;
+		printf("\n");
+	}
+}
+
+int main(void)
+{
+	int a;
+	int line;
+	printf("숫자를 입력하세요 : ");
+	scanf_s("%d", &a);
+	num(a);
+	printf("\n");
+}
+
+
+2번
+
+#include <stdio.h>
+
+int is_prime(int i)
+{
+	int j, result = 0;
+
+	for (j = 2; j <= i - 1; j++)
+	{
+		if (i%j == 0)
+		{
+			result++;
+			break;
+		}
+	}
+
+	return result;
+}
+int main()
+{
+	int i, j;
+	int num;
+	printf("숫자를 입력하세요 : ");
+	scanf_s("%d",&num);
+
+	for (i = 2; i <= num; i++)
+	{
+		if (is_prime(i) == 0)
+
+			for (j = 2; j <= num; j++)
+			{
+				if (is_prime(j) == 0)
+					printf("%d * %d = %d\n", i, j, i*j);
+			}
+	}
+
+	return 0;
+}

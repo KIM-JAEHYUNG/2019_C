@@ -1,0 +1,113 @@
+1번
+
+#include <stdio.h>
+
+int main(void) {
+	int a;
+	printf("달을 입력하시오 : ");
+	scanf_s("%d", &a);
+	switch (a) {
+		case 1:
+			printf("1월은 31일입니다.\n");
+			break;
+
+		case 2:
+			printf("2월은 28일입니다.\n");
+			break;
+
+		case 3:
+			printf("3월은 31일입니다.\n");
+			break;
+
+		case 4:
+			printf("4월은 30일입니다.\n");
+			break;
+
+		case 5:
+			printf("5월은 31일입니다.\n");
+			break;
+
+		case 6:
+			printf("6월은 30일입니다.\n");
+			break;
+
+		case 7:
+			printf("7월은 31일입니다.\n");
+			break;
+
+		case 8:
+			printf("8은 31일입니다.\n");
+			break;
+
+		case 9:
+			printf("9월은 30일입니다.\n");
+			break;
+
+		case 10:
+			printf("10월은 31일입니다.\n");
+			break;
+
+		case 11:
+			printf("11월은 30일입니다.\n");
+			break;
+
+		case 12:
+			printf("12월은 31일입니다.\n");
+			break;
+
+		default:
+			printf("12까지만 입력하시오\n");
+			break;
+	}
+
+	return 0;
+}
+
+
+2번
+
+#include <stdio.h>
+
+int main(void) {
+	int a;
+	int b;
+	int calc;
+	printf("사칙연산 프로그램\n");
+	printf("첫번째 수를 입력하시오 : ");
+	scanf_s("%d", &a);
+	printf("두번째 수를 입력하시오 : ");
+	scanf_s("%d", &b);
+	printf("1번 덧셈\n2번 뺄셈\n3번 곱셈\n4번 나눗셈\n");
+	printf("수행하고 싶은 연산의 번호를 입력하시오 : ");
+	scanf_s("%d", &calc);
+	
+	if (calc == 1) {
+		printf("덧셈 결과 : %d\n", a + b);
+	}
+
+	else if (calc == 2) {
+		if (a >= b) {
+			printf("뺄셈 결과(X>Y) : %d\n", a - b);
+		}
+		else {
+			printf("뺄셈 결과(X<Y) : %d\n", b - a);
+		}
+	}
+
+	else if (calc == 3) {
+		printf("곱셈 결과 : %d\n", a*b);
+	}
+
+	else if (calc == 4) {
+		if (a >= b) {
+			printf("나눗셈 결과(X>Y) : %d\n", a / b);
+		}
+		else {
+			printf("나눗셈 결과(X<Y): %d\n", b / a);
+		}
+	}
+	else {
+		return 0;
+	}
+	return 0;
+}

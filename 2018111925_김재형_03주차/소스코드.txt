@@ -1,0 +1,48 @@
+1번
+
+#include <stdio.h>
+
+void main()
+{
+	int x;
+	scanf_s("%d", &x);
+	printf("x = %d\n", x);
+	x++;
+	printf("x = %d\n", x);
+	++x;
+	printf("x = %d\n", x);
+	x--;
+	printf("x = %d\n", x);
+	--x;
+	printf("x = %d\n", x);
+}
+
+
+2번
+
+#include <stdio.h>
+
+void main()
+{
+	int a;
+	int b;
+	int c;
+	scanf_s("%d %d %d", &a, &b, &c);
+	printf("부피는 : %d ",a*b*c);
+}
+
+3번
+
+#include <stdio.h>
+
+int main(void)
+{
+	int a;
+	int b;
+	printf("숫자1을 입력하시오 : ");
+	scanf_s("%d", &a);
+	printf("숫자2를 입력하시오 : ");
+	scanf_s("%d", &b);
+	printf("몫 : %d, ", b/a);
+	printf("나머지 : %d", b%a);
+}

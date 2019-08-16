@@ -1,0 +1,129 @@
+1번
+#include <stdio.h>
+
+int main(void)
+{
+	printf("   *\n");
+	printf("  ***\n");
+	printf(" *****\n");
+	printf("*******\n");
+	printf(" *****\n");
+	printf("  ***\n");
+	printf("   *\n");
+}
+
+2번
+#include <stdio.h>
+
+int main(void)
+{
+	printf("   *\n  ***\n *****\n*******\n *****\n  ***\n   *\n");
+}
+
+3번
+#include <stdio.h>
+
+int main(void)
+{
+	printf("C language");
+}
+
+4번
+#include <stdio.h>
+
+int main(void)
+{
+	int studentnumber;
+	printf("학번 : ");
+	scanf_s("%d", &studentnumber);
+}
+
+5번
+#include <stdio.h>
+
+int main(void)
+{
+	int studentnumber;
+	scanf_s("%d", &studentnumber);
+	printf("학번 : %d", studentnumber);
+}
+
+6번
+#include <stdio.h>
+
+int main(void)
+{
+	int number1;
+	int number2;
+	printf("숫자1 : ");
+	scanf_s("%d", &number1);
+	printf("숫자2 : ");
+	scanf_s("%d", &number2);
+}
+
+
+7번
+#include <stdio.h>
+
+int main(void)
+{
+	int number1;
+	int number2;
+	printf("숫자1 : ");
+	scanf_s("%d", &number1);
+	printf("숫자2 : ");
+	scanf_s("%d", &number2);
+	printf("숫자1 + 숫자2 = %d\n", number1 + number2);
+}
+
+8번
+#include <stdio.h>
+
+int main(void)
+{
+	int number1;
+	int number2;
+	printf("숫자1을 입력하시오 : ");
+	scanf_s("%d", &number1);
+	printf("숫자2를 입력하시오 : ");
+	scanf_s("%d", &number2);
+	printf("숫자1 : %d\n", number1);
+	printf("숫자2 : %d\n", number2);
+	printf("숫자1 + 숫자2 = %d\n", number1 + number2);
+}
+
+9번
+#include <stdio.h>
+
+int main(void)
+{
+	int number1;
+	int number2;
+	printf("숫자1 : ");
+	scanf_s("%d", &number1);
+	printf("숫자2 : ");
+	scanf_s("%d", &number2);
+	printf("숫자1 + 숫자2 = %d\n", number1 + number2);
+	printf("숫자1 - 숫자2 = %d\n", number1 - number2);
+	printf("숫자1 / 숫자2 = %d\n", number1 / number2);
+	printf("숫자1 * 숫자2 = %d\n", number1 * number2);
+}
+
+10번
+#include <stdio.h>
+
+int main(void)
+{
+	int number1;
+	int number2;
+	printf("숫자1 : ");
+	scanf_s("%d", &number1);
+	printf("숫자2 : ");
+	scanf_s("%d", &number2);
+	printf("숫자1 : %d\n", number1);
+	printf("숫자2 : %d\n", number2);
+	printf("숫자1 + 숫자2 = %d\n", number1 + number2);
+	printf("숫자1 - 숫자2 = %d\n", number1 - number2);
+	printf("숫자1 / 숫자2 = %d\n", number1 / number2);
+	printf("숫자1 * 숫자2 = %d\n", number1 * number2);
+}

@@ -1,0 +1,146 @@
+1번
+
+#include <stdio.h>
+
+int main(void)
+{
+	int i; //i라는 정수 선언
+	char str[4]; //char자료형의 str이란 이름의 요소의 개수가 4개인 배열 선언
+
+	str[0] = 'a'; //0번째 요소에 'a'
+	str[1] = 'b'; //1번째 요소에 'b'
+	str[2] = 'c'; //2번째 요소에 'c'
+	str[3] = '\n'; //3번째 요소에 '\n'
+
+	i = 0; //정수i는 0
+
+	while (str[i] != '\0')//배열str이 문자열의 끝을 나타내는 NULL문자가 아닐때까지 반복
+	{
+		printf("%c", str[i]);//char문자를 배열에 때라 반복문 종료시까지 표시
+		i++; //i는 0에서 시작해서 반복문안에서 1씩 더함
+	}
+	return 0;
+}
+
+2번
+
+#include <stdio.h>
+
+int main(void)
+{
+	char str1[6] = "Seoul"; //str1배열의 요소개수는 6개이고 앞 5개에는 S,e,o,u,l이 들어가고 남은 하나에는 NULL문자 들어감
+	char str2[3] = { 'i','s','\0' };//str2배열의 요소개수는 3개이고 각각 i,s,그리고 NULL문자가 들어감
+	char str3[] = "the capital city of Korea.";//str3배열의 요소개수는 정해지지않았고 the capital city of Korea.가 들어간뒤 NULL문자 들어감
+
+	printf("%s %s %s\n", str1, str2, str3); //str1,str2,str3를 string형으로 보여준다
+
+	return 0;
+}
+
+3번
+
+#include <stdio.h>
+
+int main(void)
+{
+	char src[] = "The worst things to eat before you sleep";//src라는 배열은 문자열을 받는다
+	char dst[100]; //dst라는 배열은 char 자료형을 가지며 요소 개수가 100개이다
+	int i; //i라는 정수 설정
+
+	printf("원본 =%s\n", src); //src배열이 받는 문자열을 보여준다
+
+	for (i = 0; src[i] != '\0'; i++) //정수 i는 0부터 시작해서 1씩 배열 src가 NULL문자 나오기 전까지 더한다
+	{
+		dst[i] = src[i]; //배열 src와 dst의 같은 인덱스에 대해 src의 문자열을 dst에 넣는다
+	} //src에 NULL문자 나왔으므로 반복문 종료
+	dst[i] = '\0'; //배열 dst에 NULL문자 넣는다
+
+	printf("복사 = %s\n", dst); //배열 dst 보여준다
+
+	return 0;
+}
+
+4번
+
+#include <stdio.h>
+
+int main(void)
+{
+	char *p = "HelloWorld"; //문자형 포인터. 문자열의 시작 위치를 문자형 포인터에 저장
+	printf("%s \n", p); //포인터 즉 배열을 보여준다
+	p = "Welcome to C World!"; // 포인터 즉 배열을 HelloWorld 에서 Welcome to C World!로 바꿈
+	printf("%s \n", p); //포인터 즉 배열을 보여준다
+	p = "Goodbye"; //포인터 즉 배열을 Welcome to C World! 에서 Goodbye로 바꿈
+	printf("%s \n", p); //포인터 즉 배열을 보여준다
+	p[0] = 'a'; //오류 발생
+
+	return 0;
+}
+
+5번
+
+#include <stdio.h>
+int main(void) {
+	char name[100]; char address[100]; //name과 address라는 이름의 char형의 자료형을 받는 요소 크기가 100개인 배열을 만듦
+	printf("이름을 입력 : "); gets_s(name, 100); //한 단어 이상을 입력받을 때에 사용, name이라는 배열에 받는다
+	printf("현재 거주하는 주소 : "); gets_s(address, 100); //한 단어 이상을 입력받을 때에 사용, adsress이라는 배열에 받는다
+	puts(name); puts(address); //name 배열과 address 배열의 출력한다
+	return 0;
+}
+
+6번
+
+#include <stdio.h>
+#include <ctype.h>
+
+int main(void) 
+{
+	int c; //정수형 c 설정
+	while ((c = getchar()) != EOF) //getchar로 받은 자료형을 c에 넣고, End Of File을 나타내는 자료형과 다를 때까지 반복문 실행
+	{
+		if (islower(c)) //소문자인지 검사 
+		{
+			c = toupper(c); //c의 대문자를 반환
+		} 
+		putchar(c);//대문자를 표시
+	}
+	return 0;
+}
+
+7번
+
+#define _CRT_SECURE_NO_WARNINGS //C4996에러를 잡기 위해 코드 넣었습니다
+#include <string.h> 
+#include <stdio.h>
+
+int main(void)
+{
+	char string[80]; //string라는 배열은 char 자료형을 가지며 요소 개수가 80개이다
+
+	strcpy(string, "Hello world from "); //strcpy를 이용해 문자열을 복사한다. Hello world from를 복사해 string에 넣는다
+	strcat(string, "strcpy ");//strcpy를 이용해 문자열을 복사한다. strcpy 를 복사해 string에 넣는다
+	strcat(string, "and "); //strcpy를 이용해 문자열을 복사한다.and  를 복사해 string에 넣는다
+	strcat(string, "strcat!");//strcpy를 이용해 문자열을 복사한다.strcat! 를 복사해 string에 넣는다
+	printf("string = %s\n", string); //배열 string을 표시한다
+	return 0;
+}
+
+8번
+
+#include <stdio.h>
+
+int main(void) 
+{
+	char s[] = "100"; //s라는 배열은 char 자료형을 가지며 요소 개수가 100개이다
+	int value; //value라는 정수형 지정
+
+	sscanf_s(s, "%d", &value); //sscanf를 통해 문자열을 수로 바꿈. s에서 %d 형식으로 값을 읽어온다
+	printf("%d \n", value); //value 값을 %d 자료형으로 표현한다
+
+	value++; //1더한다
+	
+	sprintf_s(s, "%d", value); //sprintf() 함수는 변수에서 서식 첨부 캐릭터 라인을 기록한다. value값을 프린트한다.
+	printf("%s \n", s); //value 값을 %d 자료형으로 표현한다
+
+	return 0;
+}

@@ -1,0 +1,81 @@
+1¹ø
+
+#include<stdio.h>
+
+int main()
+{
+	int data[5] = { 1,2,3,4,5 };
+	int *ptr = data;
+	int i;
+	for (i = 0; i < 5; i++)
+	{
+		printf("%d\n",ptr[i]+2);
+	}
+}
+
+
+2¹ø
+
+#include <stdio.h>
+#include <time.h>
+#define size 10
+
+void copyarray(int from[], int to[], int n)
+{
+	int q;
+	for (q = 0; q < n; q++)
+	{
+		to[q] = from[q];
+	}
+}
+
+int main()
+{
+	int a[size];
+	int b[size];
+	srand((unsigned)time(NULL));
+	
+	int i;
+	
+	for (i = 0; i < size; i++)
+	{
+		a[i] = rand() % 100 + 1;
+		b[i] = rand() % 100 + 1;
+	}
+
+	printf("a[10] = ");
+
+	for (i = 0; i < size; i++)
+	{
+		printf("%4d", a[i]);
+	}
+
+	printf("\n");
+	
+	printf("b[10] = ");
+
+	for (i = 0; i < size; i++)
+	{
+		printf("%4d", b[i]);
+	}
+
+	printf("\n");
+
+	printf("a[10] = ");
+
+	for (i = 0; i < size; i++)
+	{
+		printf("%4d", a[i]);
+	}
+
+	printf("\n");
+
+	printf("b[10] = ");
+
+	copyarray(a, b, size);
+
+	for (i = 0; i < size; i++)
+	{
+		printf("%4d", b[i]);
+	}
+}

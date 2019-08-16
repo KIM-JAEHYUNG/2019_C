@@ -1,0 +1,94 @@
+1번
+
+#include <stdio.h>
+int main(void){
+	long fact = 1;
+	int i, n;
+	printf("1부터 n까지의 곱셈을 계산하는 프로그램입니다.\nn의 값을 입력하시오 :");
+	scanf_s("%d", &n);
+	for (i = 1; i <= n; i++)
+		fact = fact * i;
+	printf("계산 값은 : %d\n",fact);
+	}
+
+
+2번
+
+#include <stdio.h>
+
+int main(void) {
+	int spc;
+	int num;
+	int line;
+	line = 0;
+	while (line < 10)
+	{
+		for (spc = 0; spc < 9 - line; spc++)
+		{
+			printf(" ");
+		}
+		for (num = 0; num <= line; num++)
+		{
+			printf("%d", line - num);
+		}
+		printf("\n");
+		line++;
+	}
+}
+
+
+3번
+
+#include <stdio.h>
+int main(void) {
+	int i, j;
+	for (i = 2; i <= 100; i++) {
+		for (j = 2; j <= i; j++)
+		{
+			if (i % j == 0)
+				break;
+		}
+		if (i == j)
+		{
+			printf("%d ", i);
+		}
+	}
+	return 0;
+}
+
+4번 
+
+#include <stdio.h>
+
+int is_prime(int i)
+{
+	int j, result = 0;
+
+	for (j = 2; j <= i - 1; j++)
+	{
+		if (i%j == 0)
+		{
+			result++;
+			break;
+		}
+	}
+
+	return result;
+}
+int main()
+{
+	int i, j;
+
+	for (i = 2; i <= 100; i++)
+	{
+		if (is_prime(i) == 0)
+
+			for (j = 2; j <= 100; j++)
+			{
+				if (is_prime(j) == 0)
+					printf("%d * %d = %d\n", i, j, i*j);
+			}
+	}
+
+	return 0;
+}

@@ -1,0 +1,117 @@
+1번
+
+#include <stdio.h>
+
+int main()
+{
+	int x = 10;
+	int n = 10;
+	int sum = 0;
+	while (n >= 0)
+	{
+		if (x != 0)
+		{
+			sum = sum + x;
+			x = x - 1;
+		}
+		else
+		{
+			sum = sum + 1;
+		}
+		n--;
+	}
+	printf("%d\n", sum);
+}
+
+2번 
+
+#include <stdio.h>
+
+int digit_num = 0;
+
+int digit(int a)
+{
+		if (a >= 1)
+		{
+			digit_num = digit_num + 1;
+			return digit(a/10);
+		}
+		else
+		{
+			return 0;
+		}
+}
+
+int main()
+{
+	int a;
+	printf("정수를 입력하시오 : ");
+	scanf_s("%d", &a);
+	digit(a);
+	printf("자리수의 개수 : %d\n",digit_num);
+}
+
+3번 
+
+#include <stdio.h>
+
+void main()
+{
+	int a[5] = { 1,2,3,4,5 }; //배열을 선언 : 정수의 자료형으로 a라는 배열이름에 5개의 요소를 저장
+	int n; //n이라는 정수를 선언
+
+	for (n = 0; n < 5; n++) //n이 0부터 5미만까지 1씩 증가하며 반복문 실행
+	{
+		printf("n = %d, a[%d] = %d\n", n, n, a[n]); //n은 몇번째 요소인지를 나타내고, a[%d]는 a배열의 n번째 요소가 무엇인지 나타냄
+	}
+}
+
+4번
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+void main()
+{
+	int n;
+	int a[100];
+
+	srand((unsigned)time(NULL));
+
+	for (n = 0; n < 100; n++)
+	{
+		a[n] = rand() % 100 + 1;
+	}
+
+	for (n = 0; n < 100; n++)
+	{
+		printf("%d번째 변수 = %d\n", n+1, a[n]);
+	}
+	return 0;
+}
+
+5번
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+void main()
+{
+	int n;
+	int a[100];
+
+	srand((unsigned)time(NULL));
+
+	for (n = 0; n < 100; n++)
+	{
+		a[n] = rand() % 100 + 1;
+	}
+
+	for (n = 0; n < 100; n++)
+	{
+		printf("%d번째 변수 = %d\n", n+1, a[99-n]);
+	}
+	return 0;
+}
